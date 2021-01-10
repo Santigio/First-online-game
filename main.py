@@ -61,5 +61,6 @@ def main():
         p.move()
         redraw_window(win, p)
 
+
 main()
 

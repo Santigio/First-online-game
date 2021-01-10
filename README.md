@@ -1,2 +1,2 @@
 # First-online-game
-Building an online game using pygame and sockets. 
+Building a scalable multiplayer game with python using sockets/networking and pygame. 
