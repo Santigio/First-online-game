@@ -2,7 +2,7 @@ import socket
 from _thread import *
 import sys
 
-server = "192.168.1.73"
+server = ""
 port = 5555
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -17,7 +17,7 @@ print("Waiting for connection, Server Started")
 
 
 def trapped_client(conn):
-
+    conn.send(str.encode("Connected"))
     reply = ""
     while True:
         try:
@@ -34,6 +34,10 @@ def trapped_client(conn):
             conn.sendall(str.encode(reply))
         except:
             break
+
+    print("Lost connection")
+    conn.closed()
+
 
 while True:
     conn, addr = s.accept()
